@@ -1,22 +1,11 @@
-# resolve <sup>[![Version Badge][2]][1]</sup>
-
-implements the [node `require.resolve()` algorithm](https://nodejs.org/api/modules.html#modules_all_together) such that you can `require.resolve()` on behalf of a file asynchronously and synchronously
-
-[![github actions][actions-image]][actions-url]
-[![coverage][codecov-image]][codecov-url]
-[![dependency status][5]][6]
-[![dev dependency status][7]][8]
-[![License][license-image]][license-url]
-[![Downloads][downloads-image]][downloads-url]
-
-[![npm badge][11]][1]
+# import-resolve 
 
 # example
 
 asynchronously resolve:
 
 ```js
-var resolve = require('resolve/async'); // or, require('resolve')
+const { resolve } = import('resolve');
 resolve('tap', { basedir: __dirname }, function (err, res) {
     if (err) console.error(err);
     else console.log(res);
@@ -267,13 +256,13 @@ default `opts` values:
 
 # install
 
-With [npm](https://npmjs.org) do:
+
 
 ```sh
-npm install resolve
+fetch('resolve.js').then(r=>import(`data:text/javascript;${r.text()}`)
 ```
 
-# license
+# license of unchanged materials
 
 MIT
 
@@ -292,3 +281,6 @@ MIT
 [codecov-url]: https://app.codecov.io/gh/browserify/resolve/
 [actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/browserify/resolve
 [actions-url]: https://github.com/browserify/resolve/actions
+
+# license of all changes:
+The Unlicense
